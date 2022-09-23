@@ -1,0 +1,464 @@
+import Image from "next/image";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Layout from "../components/layout/layout";
+import pattern from "../assets/images/pattern.png";
+import Image1 from "../assets/images/program/9.jpg";
+import Image2 from "../assets/images/program/5.jpg";
+import Image3 from "../assets/images/program/7.jpg";
+import profile from "../assets/images/profile.jpeg";
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import testiominal1 from "../assets/images/home/testimonial2.jpeg";
+import testiominal2 from "../assets/images/home/testimonial1.jpeg";
+import Testimonial from "../components/home/testimonial/Testimonial";
+
+export default function Programs() {
+  const testimonials = [
+    // {
+    //   paragraphs: [
+    //     "Ibn Abbas related that the Messenger of Allah (S) ““There is nothing like marriage, for two who love one another.”",
+    //     "Marriage is God’s civilizational sunnah and from the great gifts given to humankind and an obligation for able Muslims. Amongst the great challenges that our Muslim community is facing in America is the facilitation of marriage and in particular healthy marriages. Ihsan coaching’s earnest and contextualized approach towards marital coaching is critical in our time given the predicament we find ourselves in. Ihsaans multi dimensional approach includes modern tools and resources, but most importantly is rooten in Islamic values and presented a spiritual dimension towards marital coaching, something missing in our time. We ask Allah to open doors for Farhan and his team, and benefit the ummah by them.",
+    //   ],
+    //   profileImg: testiominal2,
+    //   name: "Shaykh Umair Haseeb",
+    //   designation: "Director of Religious Affairs at Taleef",
+    // },
+    // {
+    //   paragraphs: [
+    //     "Ihsaan Coaching fills a much needed void in muslim communities. As an Imam I have personally worked with Ihsaan coaching and also have recommended many congregants to use Ihsaan for help with marriage, anxiety, and depression and have seen nothing but positive results alhamdulilah",
+    //   ],
+    //   profileImg: testiominal1,
+    //   name: "Shaykh Ilir Aliji",
+    //   designation:
+    //     "Imam at Masjid Albani and Instructor at Islamic Institute of Texas",
+    // },
+    // {
+    //   paragraphs: [
+    //     "In a time where members of our communities are increasingly facing mental health issues, marital disputes etc, it is imperative to have services which cater to their needs. Alhamdulillah, it is a breath of fresh air that Br. Farhan and his team at Ihsan Coaching have been doing just that. They have stepped up to provide a needed platform for Muslims facing these realistic issues. Their coaches provide a balance of both the Islamic as well as secular perspectives when dealing with their clients. Alhamdulillah, our community has also established a partnership with Ihsan Coaching, so that our members also benefit from their services. I hope many others realize that there is someone to talk to when needing help. Please do not be silent and reach out to them! I highly recommend their organization. May Allah continue to grant them success and the ability to help others.",
+    //   ],
+    //   profileImg: profile,
+    //   name: "Mufti Asif Umar",
+    //   designation: "Islamic Wills USA",
+    // },
+    {
+      paragraphs: [
+        "Alhamdulillah Ihsan Coaching is a blessing for the community. Our commmnity invited Brother Farhan from Ihsan Coaching to talk with our youth about the harms of pornography and how it effects a person. The program was well received and eye-opening. We need to have more of these discussions to help those who are struggling. This was a great first step.",
+      ],
+      // profileImg: profile,
+      name: "Shaykh Kamran Sabir",
+      designation: "Youth Director at Makki Masjid",
+    },
+  ];
+
+  // const settings = {
+  //   speed: 500,
+  //   infinite: true,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   className: "w-[100%] outline-0 ",
+  //   nextArrow: <SampleNextArrow />,
+  //   prevArrow: <SamplePrevArrow />,
+  // };
+
+  // const settings2 = {
+  //   speed: 500,
+  //   infinite: true,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 1,
+  //   className: "w-[100%] flex outline-0 ",
+  // };
+  const settings3 = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: true,
+    autoplay: true,
+    speed: 400,
+    autoplaySpeed: 6000,
+    cssEase: "linear",
+    className: "w-[100%] flex outline-0 center",
+    arrows: false,
+    centerPadding: "60px",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <BsChevronRight
+        onClick={onClick}
+        className="absolute right-[0.5%] sm:right-[2%] sc1350:right-[3%] top-[38%] text-[25px] sm:text-[35px] text-[#9D9D9D] z-[2] cursor-pointer"
+      />
+    );
+  }
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <BsChevronLeft
+        onClick={onClick}
+        className="absolute left-[0.5%] sm:left-[2%] sc1350:left-[3%] top-[38%] text-[25px] sm:text-[35px] text-[#9D9D9D] z-[2] cursor-pointer"
+      />
+    );
+  }
+  return (
+    <Layout>
+      {/* hero section jumbotron */}
+      {/* <section className="w-full py-[93px] bg-[#F2F2F2] relative overflow-hidden">
+      <div className='absolute left-0 right-0 top-0 w-full h-[100%]'>
+        <div className='scale-[1.2]'><Image src={pattern} /></div>
+      </div>
+      <div className='absolute left-0 right-0 top-0 w-full h-[100%] linear-gradient-4'></div>
+      <div className="myContainer flex">
+        <div className=" w-full xl:h-[540px] flex justify-center flex-col text-center relative z-[1]">
+          <h1 className="fpr text-[40px] sm:[52px] md:text-[75px] sc1500:text-[100px] leading-[40px] md:leading-[75px] sc1500:leading-[140px] text-[#0F2E3C] ">
+            Programs and seminars
+          </h1>
+          <p className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#555555] ">
+          We partner with organizations and institution to deliver robust programs and seminars to a wide raof audiences, both in person and online.
+          </p>
+        </div>
+      </div>
+    </section> */}
+      <section className="w-full h-96 bg-[#F2F2F2] relative overflow-hidden">
+        <div className="absolute left-0 right-0 top-0 w-full h-[100%]">
+          <div className="scale-[1.5]">
+            <div className="scale-[1.2]">
+              <Image src={pattern} />
+            </div>
+          </div>
+        </div>
+        <div className="absolute left-0 right-0 top-0 w-full h-[1200%] linear-gradient-4"></div>
+        <div className="myContainer flex flex-col h-[100%] justify-center relative z-[1]">
+          <h1 className="fpr text-[35px] md:text-[60px]  leading-[35px] md:leading-[60px]  mx-auto text-[#0F2E3C] text-center max-w-[1374px] pt-[10px]">
+            Programs and seminars
+          </h1>
+          <p className="fgr text-[12px] md:text-[18px] leading-[16px] md:leading-[30px] text-[#555555] text-center max-w-[760px] mx-auto pt-[15px] md:pt-[20px]">
+            We partner with organizations and institution to deliver robust
+            programs and seminars to a wide range of audiences, both in person
+            and online.
+          </p>
+        </div>
+      </section>
+      {/* Till Death section */}
+      <section className="w-full py-[30px] md:pt-[50px] md:pb-[50px] lg:pt-[93px] lg:pb-[93px] bg-[#fff]">
+        <div className="myContainer">
+          <div className=" w-full ">
+            <h2 className="fpr text-[30px] md:text-[44px]  leading-[30px] md:leading-[44px]  text-[#0F2E3C] ">
+              Till Death Do Us Part: Premarital Coaching and How to Choose the
+              Right Spouse
+            </h2>
+            <p className=" text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] mt-4 text-[#292929] ">
+              We are often told that prevention is better than the cure.
+              However, we often become reactive rather than proactive. With the
+              rising divorce rate within the Muslim community, we need to
+              adequately prepare our young adults to make sure they are ready
+              for marriage and are choosing the right spouse for them. Most
+              divorces happen within the first three years of marriage. This is
+              due to couples not knowing the correct questions to ask and not
+              discussing any potential issues that may occur. This is why
+              premarital coaching is very important. In this seminar,
+              marriageable adults will learn how to correctly choose a life
+              partner while also making sure to follow the correct teachings of
+              Islam.
+            </p>
+
+            <h5 className="font-bold text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] mt-[20px] md:mt-[50px] ">
+              Topics covered:
+            </h5>
+            <ul className="list-disc list-inside  ">
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#555555] ">
+                <p className="inline"> How to Search for a Spouse</p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#555555]">
+                <p className="inline">What to Look for in a spouse</p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#555555]">
+                <p className="inline">
+                  The Premarital process and what questions to ask
+                </p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#555555]">
+                <p className="inline">5 main reasons for marital issues</p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#555555]">
+                <p className="inline">
+                  Key Factors to having a successful marriage
+                </p>
+              </li>
+            </ul>
+
+            <h2 className="fpr text-[44px] md:text-[44px] leading-[44px] md:leading-[44px]  mt-[30px] md:mt-[70px] text-[#0F2E3C] ">
+              How to lead a more fulfilling marriage
+            </h2>
+            <p className="text-[12px] mt-4 md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929] ">
+              After the honeymoon phase, the reality of marriage quickly kicks
+              in. With the constant stressors of life, people tend to stop
+              working on their marriages and become content in their
+              relationship. Research shows that it is takes 6 years before a
+              couple even seeks marital help from an expert. However, by this
+              time it is often too late due to resentment built up for another.
+              This is why it is important to constantly work on the marriage to
+              make sure both spouses are fulfilled and getting their needs met.
+              The Prophet SAW said, “Nikkah is half your deen.” We should ensure
+              that we are living a fulfilling marriage and doing what we can to
+              please Allah SWT.
+            </p>
+            <h5 className="font-bold text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] mt-[20px] md:mt-[50px] ">
+              Topics covered:
+            </h5>
+            <ul className="list-disc list-inside  ">
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929] ">
+                <p className="inline">Enhancing our relationships</p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929]">
+                <p className="inline">Conflict resolution</p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929]">
+                <p className="inline">The Dos and Don’ts of marriage</p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929]">
+                <p className="inline">
+                  The importance of Friendship in a marriage
+                </p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929]">
+                <p className="inline">Effective communication skills</p>
+              </li>
+            </ul>
+
+            <h2 className="fpr text-[44px] md:text-[44px] leading-[44px] md:leading-[44px]  mt-[30px] md:mt-[70px] text-[#0F2E3C] ">
+              Proving the existence of the Creator
+            </h2>
+            <p className="text-[12px] mt-4 md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929] ">
+              Knowledge of Allah’s existence is often taken for granted by
+              believers. The affirmed belief in Allah SWT is not an easy
+              prospect for many people. In today’s day and age, more young
+              Muslims are starting to have doubts about the existence of our
+              creator. The topics of atheism are often explored within the
+              educational system, and is on a rise as young adults may not be
+              receiving the answers they need to build more faith and conviction
+              within their deen. It’s important unpack this issue in a
+              constructive way and discuss the the foundational arguments and
+              proofs of Allah’s existence. In this seminar, we explore what
+              causes people to loose faith, and what evidence is available to
+              help prove the existence of Allah.
+            </p>
+
+            <h2 className="fpr text-[44px] md:text-[44px] leading-[44px] md:leading-[44px]  mt-[30px] md:mt-[70px] text-[#0F2E3C] ">
+              Raising Children in Turbulent Times
+            </h2>
+            <p className="text-[12px] mt-4 md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929] ">
+            There is a big generation gap between parents and their children. Most parents don’t understand the
+            challenges their children are facing today. There is a big disconnect and we have to learn how to bridge
+            the gap. This is only possible by understanding the challenges our youth are facing and how we can be of
+            support. We all have a part to play, but in order to find the solutions we first need to understand the
+            challenges.
+            </p>
+            <h5 className="font-bold text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] mt-[20px] md:mt-[50px] ">
+              Topics covered:
+            </h5>
+            <ul className="list-disc list-inside  ">
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929] ">
+                <p className="inline">Illicit relationships</p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929]">
+                <p className="inline">LGBTQ+</p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929]">
+                <p className="inline">Mental Health</p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929]">
+                <p className="inline">
+                  Bullying
+                </p>
+              </li>
+              <li className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#292929]">
+                <p className="inline">Managing Social Media</p>
+              </li>
+            </ul>
+
+            {/* <div className="feedbacks-wrapper">
+              <h2 className="fpr text-[32px] lg:text-[42px] 2xl:text-[52px] text-center mt-[70px] text-[#0F2E3C] ">
+                See what previous seminar hosts had to say
+              </h2>
+              <div className="feedbacks flex justify-center mt-[50px] w-[100%] ">
+                <div className="w-[100%] md:w-[75%]">
+                  <Slider {...settings}>
+                    <div className=" px-4 md:px-[100px] py-[20px] xl:py-[50px] bg-[#0F2E3C0D] border ">
+                      <p className="italic text-[12px] md:text-[20px] leading-[20px] md:leading-[26px] text-[#555555] text-center ">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                      </p>
+                      <div className="flex mt-[20px] items-center max-w-fit mx-auto ">
+                        <span className="profile bg-white border border-[#707070] rounded-[50%] w-[75px] h-[75px] "></span>
+                        <div className="ml-4">
+                          <p className="text-[12px] md:text-[18px] leading-[18px] md:leading-[18px] font-bold ">
+                            Sheikh Abdullah Halton Mosque
+                          </p>
+                          <p className="text-[12px] md:text-[18px] leading-[18px] md:leading-[26px] ">
+                            Halton Mosque
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className=" px-4 md:px-[100px] py-[20px] xl:py-[50px] bg-[#0F2E3C0D] border ">
+                      <p className="text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] text-[#555555] text-center ">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                      </p>
+                      <div className="flex mt-[20px] max-w-fit mx-auto ">
+                        <span className="profile bg-white border border-[#707070] rounded-[50%] w-[75px] h-[75px] "></span>
+                        <div className="ml-4">
+                          <p className="text-[12px] md:text-[18px] leading-[18px] md:leading-[18px] font-bold ">
+                            Sheikh Abdullah Halton Mosque
+                          </p>
+                          <p className="text-[12px] md:text-[18px] leading-[18px] md:leading-[26px] ">
+                            Halton Mosque
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Slider>
+                </div>
+              </div>
+            </div> */}
+          </div>
+        </div>
+      </section>
+      <Testimonial
+        testimonials={testimonials}
+        mainHeading={"See what previous seminar hosts had to say"}
+        blogPage
+      />
+
+      {/* Image gellary  */}
+      <section className="my-10] ">
+        <div className="main__container ">
+          <div className="images-slider w-[100%] mx-2 md:mx-0 flex-1 justify-between gap-x-[2%] md:gap-x-[2%] px-0">
+            {/* <Slider {...settings2} > */}
+            <Slider {...settings3} className="w-[80%] flex outline-0 m-auto ">
+
+              <div className="px-[13px]"><div className=" w-[200px ] h-[240px] sm:h-[170px] md:h-[230px] lg:h-[250px] xl:h-[400px] image_container flex justify-ce nter it ems-center  bg-[#0F2E3C0D] ">
+                <Image className="" src={Image1} alt="Program1" />
+              </div></div>
+              <div className="px-[13px]"><div className=" w-[200px ] h-[240px] sm:h-[170px] md:h-[230px] lg:h-[250px] xl:h-[400px] image_container flex justify-ce nter it ems-center bg-[#0F2E3C0D] ">
+                <Image className="" src={Image2} alt="Program2" />
+              </div></div>
+              <div className="px-[13px]"><div className=" w-[200px ] h-[240px] sm:h-[170px] md:h-[230px] lg:h-[250px] xl:h-[400px] image_container flex justify-ce nter it ems-center bg-[#0F2E3C0D] ">
+                <Image src={Image3} alt="Program3" />
+              </div></div>
+
+              <div className="px-[13px]"><div className=" w-[200px ] h-[240px] sm:h-[170px] md:h-[230px] lg:h-[250px] xl:h-[400px] image_container flex justify-ce nter it ems-center  bg-[#0F2E3C0D] ">
+                <Image className="" src={Image1} alt="Program1" />
+              </div></div>
+              <div className="px-[13px]"><div className=" w-[200px ] h-[240px] sm:h-[170px] md:h-[230px] lg:h-[250px] xl:h-[400px] image_container flex justify-ce nter it ems-center bg-[#0F2E3C0D] ">
+                <Image className="" src={Image2} alt="Program2" />
+              </div></div>
+              <div className="px-[13px]"><div className=" w-[200px ] h-[240px] sm:h-[170px] md:h-[230px] lg:h-[250px] xl:h-[400px] image_container flex justify-ce nter it ems-center bg-[#0F2E3C0D] ">
+                <Image src={Image3} alt="Program3" />
+              </div></div>
+            </Slider>
+            {/* </Slider> */}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="relative overflow-hidden">
+        <div className="absolute left-0 right-0 top-0 w-full h-[100%] overlay-img">
+          <Image src={pattern} className="scale-[1.5] " />
+        </div>
+        <div className="absolute left-0 right-0 top-0 w-full h-[100%] bg-[#AE8B5C] opacity-[.99]"></div>
+        <div className="myContainer relative z-[2]">
+          <div className="bg-[#AE8B5C ]  py-[30px] md:py-[70px] ">
+            <h2 className="fpr text-[24px] md:text-[36px] leading-[28px] md:leading-[36px]   mt-[20px] text-[#fff] max-w-[1050px] mx-auto text-center">
+              Ihsan Coaching is always available to partner with organizations
+              to deliver programs and seminars to local communicates. Contact
+              our team to enquire about programs and seminars.
+            </h2>
+            <form
+              className=" flex flex-wrap justify-between gap-y-2 md:gap-y-4 mt-[50px] max-w-[1050px] mx-auto"
+              action=""
+            >
+              <input
+                className=" shadow-[0_0_30px_#00000029] p-2 md:p-4 h-[40px] md:h-[50px] w-full lg:w-[49%] rounded-[8px] md:rounded-[18px] text-[12px] md:text-[20px] lg:text-[24px]"
+                type="text"
+                placeholder="First Name*"
+              />
+              <input
+                className=" shadow-[0_0_30px_#00000029] p-2 md:p-4 h-[40px] md:h-[50px] w-full lg:w-[49%] rounded-[8px] md:rounded-[18px] text-[12px] md:text-[20px] lg:text-[24px]"
+                type="text"
+                placeholder="Last Name*"
+              />
+              <input
+                className=" shadow-[0_0_30px_#00000029] p-2 md:p-4 h-[40px] md:h-[50px] w-full lg:w-[49%] rounded-[8px] md:rounded-[18px] text-[12px] md:text-[20px] lg:text-[24px]"
+                type="text"
+                placeholder="Email Address*"
+              />
+              <input
+                className=" shadow-[0_0_30px_#00000029] p-2 md:p-4 h-[40px] md:h-[50px] w-full lg:w-[49%] rounded-[8px] md:rounded-[18px] text-[12px] md:text-[20px] lg:text-[24px]"
+                type="text"
+                placeholder="Phone Number*"
+              />
+              <input
+                className=" shadow-[0_0_30px_#00000029] p-2 md:p-4 h-[40px] md:h-[50px] w-full lg:w-[49%] rounded-[8px] md:rounded-[18px] text-[12px] md:text-[20px] lg:text-[24px]"
+                type="text"
+                placeholder="Organization*"
+              />
+              <input
+                className=" shadow-[0_0_30px_#00000029] p-2 md:p-4 h-[40px] md:h-[50px] w-full lg:w-[49%] rounded-[8px] md:rounded-[18px] text-[12px] md:text-[20px] lg:text-[24px]"
+                type="text"
+                placeholder="Topic Requested  "
+              />
+              <textarea
+                rows={4}
+                className=" shadow-[0_0_30px_#00000029] p-2 md:p-4 w-full rounded-[8px] md:rounded-[18px] text-[12px] md:text-[16px] leading-[16px] md:leading-[26px] "
+                placeholder="Message"
+              />
+              <div className=" w-full">
+                <button
+                  type="submit"
+                  className="shadow-[0_0_30px_#00000029] rounded-[40px] float-right bg-[#0F2E3C] text-[#fff]  text-[12px] md:text-[16px] leading-[16px] md:leading-[18px] font-bold px-10 py-3 hover:text-[#0F2E3C] hover:bg-[#fff]"
+                >
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </Layout>
+  );
+}
