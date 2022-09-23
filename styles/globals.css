@@ -531,3 +531,15 @@ ul.list-square li::marker {
 .t-in {
   text-transform: initial;
 }
+
+.card-shadow:after {
+    content:"";
+    position:absolute;
+    width:100%;
+    bottom:0.5px;
+    /* right:0.5px; */
+    z-index:-1;
+    transform:scale(.9);
+    box-shadow:  0px -4px 18px 5px rgba(149, 157, 165, 0.805);
+    /* box-shadow: 0px 0px 8px 2px #000000; */
+}
